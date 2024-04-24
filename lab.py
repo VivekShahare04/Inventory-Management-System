@@ -45,6 +45,38 @@ stock_label.place(x=60,y=205)
 stock_entry = customtkinter.CTkEntry(frame,font=font2,text_color='#000',fg_color='#fff',border_color='#B2016C',border_width=2,width=160)
 stock_entry.place(x=20,y=240)
 
+add_button=customtkinter.CTkButton(frame,font=font2,text_color='#fff',text='Add',fg_color='#047E43',hover_color='#025B30',bg_color='#1B1B21',curor='hand2',corner_radius=8,width=80)
+add_button.place(x=15,y=280)
+
+clear_button=customtkinter.CTkButton(frame,font=font2,text_color='#fff',text='New',fg_color='#E93E05',hover_color='#A82A00',bg_color='#1B1B21',curor='hand2',corner_radius=8,width=80)
+clear_button.place(x=108,y=280)
+
+update_button=customtkinter.CTkButton(frame,font=font2,text_color='#fff',text='Update',fg_color='#047E43',hover_color='#025B30',bg_color='#1B1B21',curor='hand2',corner_radius=8,width=80)
+update_button.place(x=15,y=320)
+
+delete_button=customtkinter.CTkButton(frame,font=font2,text_color='#fff',text='Delete',fg_color='#047E43',hover_color='#025B30',bg_color='#1B1B21',curor='hand2',corner_radius=8,width=80)
+delete_button.place(x=108,y=280)
+
+style = ttk.Style(app)
+
+style.theme_use('clam')
+style.configure('Treeview',font=font3,foreground='#fff',background='#A0B0C',fieldbackground='#1B1B21')
+style.map('Treeview',background=[('selected','#AA04a7')])
+
+tree = ttk.Treeview(app,height=10)
+tree['columns']=('ID','Name','In Stock')
+
+tree.column('#0',width=0,stretch=NO)
+tree.column('ID',anchor=tk.CENTER,width=150)
+tree.column('Name',anchor=tk.CENTER,width=150)
+tree.column('In Stock',anchor=tk.CENTER,width=150)
+
+tree.heading('ID',text='ID')
+tree.heading('Name',text='Name')
+tree.heading('In Stock',text='In Stock')
+
+tree.place(x=300,y=45)
+
 
 
 
